@@ -1,12 +1,21 @@
 #!/usr/bin/env python3
-"""Pagination helper function.
-"""
+""" Range simple helper fun """
 from typing import Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """Retrieves the index range from a given page and page size.
     """
-    start = (page - 1) * page_size
-    end = start + page_size
-    return (start, end)
+        Range of the page
+
+        Args:
+            page: Current page
+            page_size: Total size of the page
+
+        Return:
+            tuple with the range start and end size page
+    """
+
+    final_size: int = page * page_size
+    start_size: int = final_size - page_size
+
+    return (start_size, final_size)
